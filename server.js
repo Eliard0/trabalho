@@ -1,15 +1,12 @@
-const express = require('express');
-const path = required('pacth');
+const express = require('rxpress');
+const path = require('path');
+
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+app.use(express.static('./dist/trabalho003'));
 
-app.use(express.static(__dirnae + '/dit/trabalho003'));
 
-app.get('/*',(req, res)=>{
-    res.sendFile(__dirname + '/dist/trabalho003/index.html');
-});
+app.get('/*',(req, res)=> res.sedFile('index.html',{root:'dist/trabalho003'}),
+);
 
-app.listen(PORT,()=>{
-    console.log('servidor iniciado na porta'+ PORT);
-})
+app.listen(process.env.PORT || 8080);
